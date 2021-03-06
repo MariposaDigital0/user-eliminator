@@ -1,0 +1,23 @@
+ion-card{
+  border:  2px solid rgb(4, 141, 175);
+  ion-card-header{
+    padding:0;
+  }
+
+}
+.match-header
+{
+  font-family: 'Roboto-medium';
+  color: rgb(1, 9, 27);
+  font-size: 20px;
+}
+.btn-player
+{
+  --background: green;
+  padding: 2%;
+}
+.btn-join
+{
+  --background: rgb(182, 159, 31);
+  padding: 2%;
+}

@@ -24,3 +24,162 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+.error{
+  color: #ea6153 !important;
+
+  font-size: 0.6rem !important;
+}
+.match-header
+{
+  font-family: 'Roboto-Medium';
+  color: rgb(1, 9, 27);
+  font-size: 180%;
+}
+.btn-player
+{
+  --background: green;
+  padding: 1%;
+}
+.header-1{
+  font-size: 20px;
+  font-family: 'roboto-medium';
+}
+.shuHeader-1
+{
+  font-size: 13px;
+  font-family: 'Roboto';
+}
+.shuHeader-2
+{
+  font-size: 15px;
+  font-family: 'Roboto';
+  color: black;
+}
+.shuHeader-3
+{
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Roboto';
+  color: rgb(145, 35, 7);
+}
+.shuHeader-4
+{
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Roboto';
+  color: rgb(10, 123, 131);
+}
+.toast-sucesss
+{
+  color:primary;
+  font-size:16px;
+  font-family: 'Roboto';
+}
+.toast-error
+{
+  color:primary;
+  font-size:16px;
+  font-family: 'Roboto';
+}
+.loading-class {
+  --background: rgba(34, 34, 34, 0.075);
+  --spinner-color: #fff;
+
+  color: #fff;
+}
+.title-toolbar
+{
+font-family: 'Roboto-light';
+font-style: normal;
+font-weight: 600;
+font-size: 120%;
+
+}
+.join-game-modal-css .modal-wrapper{
+
+
+  height: 47%;
+  width: 70%;
+
+
+     position:fixed;
+     left: 15%;
+     right: 0;
+
+     border-top-left-radius: 13px;
+     border-top-right-radius: 13px;
+     border-bottom-right-radius: 13px;
+     border-bottom-left-radius: 13px;
+
+
+}
+.room-credentials-modal-css .modal-wrapper
+{
+
+  height: 27%;
+    width: 75%;
+
+
+     position:fixed;
+     left: 12%;
+     right: 0;
+
+
+     border-top-left-radius: 13px;
+     border-top-right-radius: 13px;
+     border-bottom-right-radius: 13px;
+     border-bottom-left-radius: 13px;
+
+}
+.alert-class
+{
+
+    --background: white;
+    color: red;
+    font-size: 24px;
+    button{
+        color: red !important;
+        font-size: 30px;
+
+    }
+}
+.my-wallet-alert-class  {
+  --background: rgba(216, 222, 228, 0.973);
+  header
+  {
+    color: white;
+  }
+
+  .i1
+  {
+    font-size: 20px;
+    border: 1px solid rgb(216, 228, 225);
+    border-radius: 12px;
+    padding-left: 6%;
+    height: 38px;
+    background-color: rgb(243, 239, 231);
+
+  }
+  .b1
+  {
+    background-color: rgb(184, 28, 28);
+    color: blanchedalmond;
+    margin-right: 35%;
+    padding: 6%;
+    height: 28px;
+    text-transform: unset;
+    border: 1px solid rgb(135, 222, 181);
+    border-radius: 10px;
+  }
+  .b2
+  {
+    background-color:green;
+    margin-left: 5%;
+    color: blanchedalmond;
+    padding: 6%;
+    height: 28px;
+    text-transform: unset;
+    border: 1px solid burlywood;
+    border-radius: 10px;
+  }
+}

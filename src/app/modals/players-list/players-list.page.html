@@ -1,0 +1,23 @@
+
+
+<ion-content>
+  <form >
+  <ion-row  >
+    <ion-col class="ion-no-padding ">
+  <ion-row>
+    <ion-col class="ion-text-right"><ion-icon color='warning' size='large' (click)="dismiss()" name="close-circle-outline"></ion-icon></ion-col>
+  </ion-row>
+  <ion-row class="table-header">
+    <ion-col size='3' class="ion-text-center"> <ion-text>SL No.</ion-text> </ion-col>
+    <ion-col size='9'  class="ion-text-center"><ion-text>Player List</ion-text> </ion-col>
+  </ion-row>
+  <ion-row class="table-body" *ngFor="let Player of players;index as i">
+    <ion-col  size='3'  class="ion-text-center cell-class"><ion-text>{{i+1}}</ion-text></ion-col>
+    <ion-col size="9"  class=" cell-class"> <ion-text [innerHtml]='Player.player_name'></ion-text></ion-col>
+
+  </ion-row>
+
+</ion-col>
+</ion-row>
+</form>
+</ion-content>

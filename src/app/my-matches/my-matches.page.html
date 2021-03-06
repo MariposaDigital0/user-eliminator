@@ -1,0 +1,73 @@
+<ion-app class="container-width">
+  <ion-header mode="md" [translucent]="true" class="ion-no-border">
+
+    <ion-toolbar >
+      <ion-buttons slot="start">
+        <ion-menu-button color="primary" ></ion-menu-button>
+        </ion-buttons>
+      <ion-title color="primary" class="ion-text-center title-toolbar">Eliminator</ion-title>
+      <ion-button slot="end" fill='clear'>
+        <ion-icon class="icon-zoom" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-card *ngFor=" let upcomingMatch of upcomingMatches; index as i">
+      <ion-card-header>
+        <ion-img src="https://eliminator.s3.us-east-2.amazonaws.com/game_listing/fft.jpeg"></ion-img>
+      </ion-card-header>
+
+      <ion-card-content class="ion-no-padding">
+
+        <ion-row>
+          <ion-col class="ion-text-center" size='2'><ion-icon size='large' name="game-controller"></ion-icon></ion-col>
+          <ion-col><ion-text class="match-header">FreeFire DUO Match</ion-text> </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-2">Match Time :</ion-text> </ion-col>
+          <ion-col  class="ion-no-padding"><ion-text class="shuHeader-3 ">{{upcomingMatches[i].date|date}} at {{upcomingMatches[i].time}}</ion-text> </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-2">Winner</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-2">Per Kill</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-2">Entry Fee</ion-text> </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-4">{{upcomingMatches[i].winning_prize}}</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-4">{{upcomingMatches[i].per_kill}}</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-4">{{upcomingMatches[i].entry_fee}}</ion-text> </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-2">Category</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-2">Type</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-2">MAP</ion-text> </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-4">{{upcomingMatches[i].category}}</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-4">{{upcomingMatches[i].type}}</ion-text> </ion-col>
+          <ion-col class="ion-text-center ion-no-padding" size='4'><ion-text class="shuHeader-4">{{upcomingMatches[i].map}}</ion-text> </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+        <ion-col class="ion-no-padding">
+          <ion-button class="btn-player " color='dark' (click)="ViewPlayers(upcomingMatches[i].id)">Player List</ion-button>
+
+        </ion-col>
+        <ion-col class="ion-text-right ion-no-padding">
+          <ion-button *ngIf="upcomingMatches[i].status=='ongoing'"  class="btn-player" (click)="ViewRoomDetails(upcomingMatches[i].id)">Room Details</ion-button>
+          <ion-button *ngIf="upcomingMatches[i].status=='upcoming' " color='warning' disabled class="btn-player" >Joined</ion-button>
+
+        </ion-col>
+        </ion-row>
+
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
+</ion-app>

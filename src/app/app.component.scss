@@ -1,0 +1,29 @@
+ion-menu {
+  --ion-background-color: #eaeefd;
+  --ion-text-color: var(--ion-color-secodary);
+  --max-width:80%;
+
+  ion-toolbar {
+    --background: #dbdbdb;
+    ion-title{
+      font-family: 'Roboto'
+    }
+  }
+
+  // ion-list {/* optional, but it needs when you use gradient as a background color.*/
+  //   background: transparent;
+  // }
+  ion-content{
+    ion-list{
+      padding-top: 0px;
+      padding-bottom: 0px;
+      ion-menu-toggle{
+        ion-item{
+            font-family: 'Roboto-Light';
+        }
+      }
+    }
+  }
+
+}
+

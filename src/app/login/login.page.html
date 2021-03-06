@@ -1,0 +1,63 @@
+
+
+<ion-content >
+  <ion-grid class="ion-no-padding" >
+    <form [formGroup]="loginForm">
+    <!-- LogIn Image Part -->
+  <ion-row>
+    <ion-col size-md="6" offset-md="3" class="ion-no-padding">
+      <div class="img-container">
+      <ion-img class="login-img" src="../assets/images/gaminggo2 2.png"></ion-img>
+    </div>
+    </ion-col>
+  </ion-row>
+  <!-- LogIn Input Part -->
+   <ion-row  >
+     <ion-col class="row-input " size-md="4" offset-md="4">
+       <!-- LogIn Id Part -->
+      <ion-row class="ion-margin-horizontal">
+        <ion-col>
+          <ion-item mode="md">
+            <ion-label  position="floating">Enter Mobile No.</ion-label>
+            <ion-input  formControlName="mobile" type="number"></ion-input>
+          </ion-item>
+            <ion-label *ngIf="(loginForm.controls.mobile.invalid && submitAttempt)" class="error" >Inavlid Mobile No.</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <!-- Password Part -->
+      <ion-row class="ion-margin-horizontal">
+          <ion-col>
+            <ion-item mode="md">
+              <ion-label position="floating">Enter 4 Digit Pin</ion-label>
+              <ion-input  formControlName="pin" type="password"></ion-input>
+            </ion-item>
+              <ion-label *ngIf="(loginForm.controls.pin.invalid && submitAttempt)" class="error" >Pin should be 4 digits.</ion-label>
+          </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+      <ion-row class="ion-justify-content-center ion-margin-top" >
+        <ion-col size-md="3" class="ion-text-center">
+          <ion-button mode="md" class="btn-login"  color="secondary" shape="round"  (click)="login()">
+            Log In
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center ion-margin-top" >
+        <ion-col size-md="3" class="ion-text-center ">
+          <ion-row class="ion-justify-content-center">
+         <ion-text class="shuHeader-1" color="primary">Haven't Register Yet ?</ion-text>
+         <ion-button mode="ios" class="btn-signUp" color="danger" fill="clear" routerLink="/register">Sign Up</ion-button>
+        </ion-row>
+        </ion-col>
+      </ion-row>
+
+
+
+    </form>
+  </ion-grid>
+
+</ion-content>

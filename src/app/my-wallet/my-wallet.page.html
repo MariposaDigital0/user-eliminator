@@ -1,0 +1,124 @@
+<ion-app class="container-width">
+  <ion-header mode="md" [translucent]="true" class="ion-no-border">
+
+    <ion-toolbar >
+      <ion-buttons slot="start">
+        <ion-menu-button color="primary" ></ion-menu-button>
+        </ion-buttons>
+      <ion-title color="primary" class="ion-text-center title-toolbar">Eliminator</ion-title>
+      <ion-button slot="end" fill='clear'>
+        <ion-icon class="icon-zoom" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+      <ion-row  class="ion-margin">
+        <ion-grid class="con-1">
+          <ion-row >
+        <ion-col class="ion-text-center ">
+          <ion-icon color="tertiary" name="wallet" class="icon-header"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center"><ion-text class="header-1">Wallet Balance</ion-text></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col class="ion-text-center ">
+
+            <img src='../assets/icon/rupee.png' class="rupee">
+            <ion-text class="amount-text"> {{walletBal.wal_bal}}</ion-text>
+
+
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+      </ion-row>
+
+      <ion-row  class="ion-margin">
+        <ion-grid class="con-2">
+          <ion-row >
+        <ion-col class="ion-text-center ">
+          <ion-icon color="danger" name="trophy" class="icon-header"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center"><ion-text class="header-1">Wining Balance</ion-text></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col class="ion-text-center ">
+
+            <img src='../assets/icon/rupee.png' class="rupee">
+            <ion-text class="amount-text"> {{walletBal.win_bal}}</ion-text>
+
+
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+      </ion-row>
+      <ion-row  class="ion-margin">
+        <ion-col class="con-3 ion-text-center">
+
+
+          <ion-chip color='tertiary' outline='true'>
+
+            <ion-label (click)="AddMoneyAlert()">Add Money</ion-label>
+          </ion-chip>
+          <ion-chip color='danger' outline='true' (click)="openWithdrawModel(walletBal.win_bal)">
+
+            <ion-label>Withdraw</ion-label>
+          </ion-chip>
+
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col class="ion-no-padding">
+          <ion-card class="ion-no-margin ion-no-padding con-4">
+            <ion-card-header class="ion-no-margin  ion-no-padding-bottom ion-text-center" style="padding-bottom:0">
+              <ion-text color='secondary' class="toast-error">Transactions</ion-text>
+
+            </ion-card-header>
+
+            <ion-card-content class="ion-no-margin ion-no-padding">
+              <ion-grid>
+                <ion-row class="row-1">
+
+                  <ion-col class="ion-text-center" size='6'><small><b>Description</b></small></ion-col>
+                  <ion-col class="ion-text-center" size='6'>
+
+                    <small><b>Amount</b></small>
+
+
+                  </ion-col>
+
+                </ion-row>
+                 <div *ngFor="let txn of txn_data">
+
+
+                <ion-row class="row-2" [style.background-color]="txn.txn_status==='credit'?'#9FE598':'#E59898'">
+
+                  <ion-col class="ion-text-center" size='6'>
+
+                    <small>{{txn.txn_description}}</small><br><small>{{txn.txn_date | date}}</small>
+                  </ion-col>
+                  <ion-col class="ion-text-center" size='6'><small>{{txn.txn_amount}}</small><br>
+                    <ion-text >
+                      <small >{{txn.txn_status}}</small></ion-text>
+                  </ion-col>
+                </ion-row>
+              </div>
+              </ion-grid>
+              <div class="ion-text-center ">
+                <ion-button color='medium' size='small'>More</ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+
+        </ion-col>
+      </ion-row>
+
+
+</ion-content>
+</ion-app>
